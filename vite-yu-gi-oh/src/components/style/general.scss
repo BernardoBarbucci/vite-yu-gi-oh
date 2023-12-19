@@ -1,0 +1,7 @@
+@use './partials/mixins' as *;
+@use './partials/variables' as *;
+
+* {
+    @include reset;
+    font-family: 'Roboto', sans-serif;
+}
