@@ -28,18 +28,14 @@ export default {
     },
     methods: {
         getCards() {
-            axios.get('/user?ID=12345')
-                .then(function (response) {
-                    // handle success
-                    console.log(response);
+            axios.get(this.apiUrl)
+                .then((response) => {
+                    this.cardsList = response.data.data;
                 })
                 .catch(function (error) {
                     // handle error
                     console.log(error);
                 })
-                .finally(function () {
-                    // always executed
-                });
         }
     },
     created() {
