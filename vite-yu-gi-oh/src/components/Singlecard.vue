@@ -1,15 +1,18 @@
 <template lang="">
     <article>
-        <div>
-            
-        </div>
+        <h3>
+            {{ card.name }}
+        </h3>
     </article>
 </template>
 
 <script>
 export default {
     props: {
-        // da inserire piu avanti
+        card: {
+            type: Object,
+            required: true,
+        }
     }
 }
 </script>

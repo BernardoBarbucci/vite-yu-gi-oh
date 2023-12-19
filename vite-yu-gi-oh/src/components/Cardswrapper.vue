@@ -1,13 +1,28 @@
 <template lang="">
     <section id="custom_wrapper" class="container">
-        <h1>
-            Found X cards
-        </h1>
+        <div>
+            <h1>
+                Found X cards
+            </h1>
+        </div>
+        <div class="cards row">
+            <Singlecard v-for="card in Singlecard" :key="card.id" :card="card"/>
+        </div>
     </section>
 </template>
 <script>
+import Singlecard from './Singlecard.vue'
+
 export default {
+    data() {
+        return {
+            cardsList: [],
+        }
+    }
     name: 'Cardswrapper',
+    components: {
+        Singlecard
+    }
 }
 </script>
 <style lang="scss" scoped>
