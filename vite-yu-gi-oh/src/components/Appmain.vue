@@ -1,11 +1,16 @@
 <template>
     <main>
-        <h1>hello im the main</h1>
+        <Cardswrapper />
     </main>
 </template>
 <script>
+import Cardswrapper from './Cardswrapper.vue';
+
 export default {
     name: 'Appmain',
+    components: {
+        Cardswrapper
+    }
 }
 </script>
 <style lang="scss" scoped></style>

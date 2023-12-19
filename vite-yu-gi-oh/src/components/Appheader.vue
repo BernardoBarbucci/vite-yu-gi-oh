@@ -21,7 +21,7 @@ export default {
 
   data() {
     return {
-      title: 'Yu-gi-oh API'
+      title: 'Yu-Gi-Oh API'
     }
   }
 }

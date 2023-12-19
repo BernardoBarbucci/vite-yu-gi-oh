@@ -1,9 +1,7 @@
 <template>
   <div>
     <Appheader />
-    <Appmain>
-      <Cardswrapper />
-    </Appmain>
+    <Appmain />
   </div>
 </template>
 
