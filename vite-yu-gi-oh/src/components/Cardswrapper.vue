@@ -20,10 +20,30 @@ export default {
     data() {
         return {
             cardsList: [],
+            apiUrl: 'https://db.ygoprodeck.com/api/v7/cardinfo.php?num=35&offset=0'
         };
     },
     components: {
         Singlecard
+    },
+    methods: {
+        getCards() {
+            axios.get('/user?ID=12345')
+                .then(function (response) {
+                    // handle success
+                    console.log(response);
+                })
+                .catch(function (error) {
+                    // handle error
+                    console.log(error);
+                })
+                .finally(function () {
+                    // always executed
+                });
+        }
+    },
+    created() {
+        this.getCards();
     }
 }
 </script>
