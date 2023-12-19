@@ -1,30 +1,33 @@
-<template lang="">
+<template>
     <section id="custom_wrapper" class="container">
         <div>
             <h1>
                 Found X cards
             </h1>
         </div>
-        <div class="cards row">
-            <Singlecard v-for="card in Singlecard" :key="card.id" :card="card"/>
+        <div class="row">
+            <Singlecard v-for="card in cardsList" :key="card.id" :card="card" />
         </div>
     </section>
 </template>
+
 <script>
-import Singlecard from './Singlecard.vue'
+import Singlecard from './Singlecard.vue';
+import axios from 'axios';
 
 export default {
+    name: 'Cardswrapper',
     data() {
         return {
             cardsList: [],
-        }
-    }
-    name: 'Cardswrapper',
+        };
+    },
     components: {
         Singlecard
     }
 }
 </script>
+
 <style lang="scss" scoped>
 #custom_wrapper {
     background-color: white;
