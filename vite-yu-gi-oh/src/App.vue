@@ -1,19 +1,23 @@
 <template>
   <div>
     <Appheader />
-    <Appmain />
+    <Appmain>
+      <Cardswrapper />
+    </Appmain>
   </div>
 </template>
 
 <script>
 import Appheader from './components/Appheader.vue';
 import Appmain from './components/Appmain.vue';
+import Cardswrapper from './components/Cardswrapper.vue'
 
 export default {
   name: 'App',
   components: {
     Appheader,
-    Appmain
+    Appmain,
+    Cardswrapper
   }
 }
 </script>

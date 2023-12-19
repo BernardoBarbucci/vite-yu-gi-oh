@@ -3,5 +3,6 @@
 
 * {
     @include reset;
+    background-color: $theme-color;
     font-family: 'Roboto', sans-serif;
 }

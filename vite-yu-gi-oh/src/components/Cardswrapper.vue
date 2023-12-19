@@ -1,11 +1,11 @@
 <template>
-    <main>
-        <h1>hello im the main</h1>
-    </main>
+    <div>
+        <h1>cardwrapper</h1>
+    </div>
 </template>
 <script>
 export default {
-    name: 'Appmain',
+    name: 'Cardswrapper',
 }
 </script>
 <style lang="scss" scoped></style>
