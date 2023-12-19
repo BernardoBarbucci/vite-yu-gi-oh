@@ -2,7 +2,7 @@
     <section id="custom_wrapper" class="container">
         <div>
             <h1>
-                Found X cards
+                Found {{ cardsList.length }} cards
             </h1>
         </div>
         <div class="row">
