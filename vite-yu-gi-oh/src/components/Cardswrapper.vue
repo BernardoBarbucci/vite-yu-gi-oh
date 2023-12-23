@@ -20,8 +20,6 @@ export default {
     name: 'Cardswrapper',
     data() {
         return {
-            cardsList: [],
-            apiUrl: 'https://db.ygoprodeck.com/api/v7/cardinfo.php?num=35&offset=0',
             store,
         };
     },
@@ -29,20 +27,9 @@ export default {
         Singlecard,
     },
     methods: {
-        getCards(archetype = null) {
-            const url = (archetype != null) ? `${this.apiUrl}&archetype=${archetype}` : this.apiUrl;
-            axios.get(url)
-                .then((response) => {
-                    this.cardsList = response.data.data;
-                })
-                .catch(function (error) {
-                    // handle error
-                    console.log(error);
-                })
+        created() {
+            this.store.getCards();
         }
-    },
-    created() {
-        this.getCards(this.store.archetypeFilter);
     }
 }
 </script>
