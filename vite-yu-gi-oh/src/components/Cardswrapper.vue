@@ -40,7 +40,7 @@ export default {
         }
     },
     created() {
-        this.getCards();
+        this.getCards(this.store.archetypeFilter);
     }
 }
 </script>
