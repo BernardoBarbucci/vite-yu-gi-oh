@@ -3,9 +3,17 @@
         <div class="image">
             <img :src="card.card_images[0].image_url" alt="image">
         </div>
-        <h3>
+        <h1>
             {{ card.name }}
-        </h3>
+        </h1>
+        <hr/>
+        <h2>
+            {{ card.type }}
+        </h2>
+        <p>
+            {{ card.desc }}
+        </p>
+
     </article>
 </template>
 
@@ -32,9 +40,23 @@ article {
         margin-bottom: .3rem;
     }
 
-    h3 {
+    h1 {
+        font-size: 1rem;
+        color: black;
+    }
+
+    h2 {
         font-size: .8rem;
-        color: white;
+        color: black;
+    }
+
+    p {
+        opacity: 0;
+        transition: opacity 0.3s;
+    }
+
+    p:hover {
+        opacity: 1;
     }
 }
 </style>

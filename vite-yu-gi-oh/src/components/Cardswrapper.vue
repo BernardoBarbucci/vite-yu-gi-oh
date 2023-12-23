@@ -60,3 +60,9 @@ h1 {
     padding-left: .5rem;
 }
 </style>
+
+
+<!-- TYPE: 
+cd /Users/Berna/Desktop/vite-yu-gi-oh/vite-yu-gi-oh 
+npm run dev
+-->
