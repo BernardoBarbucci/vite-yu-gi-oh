@@ -1,16 +1,14 @@
 <template>
     <section id="custom_wrapper" class="container">
         <div>
-            <h1>
-                Found {{ store.cardsList.length }} cards
-            </h1>
+            <h1>Found {{ store.cardsList.length }} cards</h1>
         </div>
         <div class="row">
             <Singlecard v-for="card in store.cardsList" :key="card.id" :card="card" />
         </div>
     </section>
 </template>
-
+  
 <script>
 import Singlecard from './Singlecard.vue';
 import axios from 'axios';
@@ -18,21 +16,31 @@ import { store } from '../store';
 
 export default {
     name: 'Cardswrapper',
+    components: {
+        Singlecard,
+    },
     data() {
         return {
             store,
         };
     },
-    components: {
-        Singlecard,
-    },
     methods: {
-        created() {
-            this.store.getCards();
-        }
-    }
-}
+        getCards() {
+            store.getCards()
+                .then(() => {
+                    console.log('CardsList in Cardswrapper:', store.cardsList);
+                })
+                .catch(error => {
+                    console.error('Error fetching cards:', error);
+                });
+        },
+    },
+    mounted() {
+        this.getCards();
+    },
+};
 </script>
+  
 
 <style lang="scss" scoped>
 #custom_wrapper {

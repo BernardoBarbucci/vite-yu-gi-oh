@@ -26,9 +26,9 @@ export default {
         card: {
             type: Object,
             required: true,
-        }
-    }
-}
+        },
+    },
+};
 </script>
 
 <style lang="scss" scoped>

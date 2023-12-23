@@ -7,15 +7,14 @@ export const store = reactive({
     cardsList: [],
     // arrow function + api call presa da cardswrapper
     getCards: function () {
-        console.log(this);
-        const url = (this.archetypeFilter !== null) ? `${this.apiUrl}&archetype=${archetype}` : this.apiUrl;
-        axios.get(url)
+        const url = (store.archetypeFilter !== null) ? `${store.apiUrl}&archetype=${store.archetypeFilter}` : store.apiUrl;
+        return axios.get(url)
             .then((response) => {
-                this.cardsList = response.data.data;
+                store.cardsList = response.data.data;
+                console.log('Data received from API:', store.cardsList);
             })
             .catch(function (error) {
-                // handle error
-                console.log(error);
+                console.error('Error fetching cards:', error);
             });
     }
-}); 
+});  
