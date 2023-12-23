@@ -10,7 +10,7 @@
           <option selected>Select an archetype</option>
           <!-- v-for che cerce nella lista in data -->
           <option v-for="(archetype, index) in archetypesList" :key="index" :value="archetype.archetype_name">
-            {{ archetype }}
+            {{ archetype.archetype_name }}
           </option>
         </select>
       </div>
