@@ -14,6 +14,7 @@
 <script>
 import Singlecard from './Singlecard.vue';
 import axios from 'axios';
+import store from '../store';
 
 export default {
     name: 'Cardswrapper',
@@ -21,6 +22,7 @@ export default {
         return {
             cardsList: [],
             apiUrl: 'https://db.ygoprodeck.com/api/v7/cardinfo.php?num=35&offset=0',
+            store,
         };
     },
     components: {

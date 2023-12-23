@@ -20,6 +20,7 @@
 
 <script>
 import axios from 'axios';
+import store from '../store';
 
 export default {
   name: 'Appheader',
@@ -29,6 +30,7 @@ export default {
       title: 'Yu-Gi-Oh API',
       archetypesList: [],
       apiUrl: 'https://db.ygoprodeck.com/api/v7/archetypes.php',
+      store
     }
   },
   methods: {
