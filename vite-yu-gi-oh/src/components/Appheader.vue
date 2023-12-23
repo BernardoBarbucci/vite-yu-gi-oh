@@ -9,8 +9,8 @@
         <select id="filter-select" class="form-select" aria-label="Default select example">
           <option selected>Select an archetype</option>
           <!-- v-for che cerce nella lista in data -->
-          <option v-for="(archetype, index) in archetypesList" :key="index" value="archetype">
-            Archetype
+          <option v-for="(archetype, index) in archetypesList" :key="index" :value="archetype.archetype_name">
+            {{ archetype }}
           </option>
         </select>
       </div>
@@ -28,7 +28,7 @@ export default {
     return {
       title: 'Yu-Gi-Oh API',
       archetypesList: [],
-      apiUrl: 'https://db.ygoprodeck.com/api/v7/cardinfo.php?num=35&offset=0',
+      apiUrl: 'https://db.ygoprodeck.com/api/v7/archetypes.php',
     }
   },
   methods: {
