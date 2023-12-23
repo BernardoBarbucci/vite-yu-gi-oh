@@ -3,17 +3,20 @@
         <div class="image">
             <img :src="card.card_images[0].image_url" alt="image">
         </div>
-        <h1>
+        <div class="card-info">
+            <h1>
             {{ card.name }}
         </h1>
-        <hr/>
         <h2>
-            {{ card.type }}
+            Type: {{ card.type }}
         </h2>
-        <p>
-            {{ card.desc }}
+        <p v-if="card.type.toLowerCase().includes('monster')">
+            Level: {{ card.level }}
         </p>
-
+        <!-- <p>
+            {{ card.desc }}
+        </p> -->
+        </div>
     </article>
 </template>
 
@@ -40,23 +43,34 @@ article {
         margin-bottom: .3rem;
     }
 
-    h1 {
-        font-size: 1rem;
-        color: black;
+    .card-info {
+        border: 2px solid black;
+
+        h1 {
+            text-align: center;
+            height: 2.5rem;
+            font-size: .9rem;
+            color: black;
+            border-bottom: 2px solid black;
+        }
+
+        h2 {
+            height: 1rem;
+            padding-left: .2rem;
+            font-size: .8rem;
+            color: black;
+        }
+
+
+        // p {
+        //     opacity: 0;
+        //     transition: opacity 0.3s;
+        // }
+
+        // p:hover {
+        //     opacity: 1;
+        // }
     }
 
-    h2 {
-        font-size: .8rem;
-        color: black;
-    }
-
-    p {
-        opacity: 0;
-        transition: opacity 0.3s;
-    }
-
-    p:hover {
-        opacity: 1;
-    }
 }
 </style>
