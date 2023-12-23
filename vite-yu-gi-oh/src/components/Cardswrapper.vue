@@ -27,8 +27,9 @@ export default {
         Singlecard,
     },
     methods: {
-        getCards() {
-            axios.get(this.apiUrl)
+        getCards(archetype = null) {
+            const url = (archetype != null) ? `${this.apiUrl}&archetype=${archetype}` : this.apiUrl;
+            axios.get(url)
                 .then((response) => {
                     this.cardsList = response.data.data;
                 })
