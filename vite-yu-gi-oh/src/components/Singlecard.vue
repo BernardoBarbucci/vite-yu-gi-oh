@@ -44,18 +44,21 @@ article {
     }
 
     .card-info {
-        border: 2px solid black;
 
         h1 {
             text-align: center;
-            height: 2.5rem;
-            font-size: .9rem;
-            color: black;
+            height: 100%;
+            min-height: 2rem;
+            font-size: 0.9rem;
+            color: white;
+            font-weight: bolder;
+            margin-bottom: .2rem;
+            padding-bottom: .2rem;
             border-bottom: 1px solid black;
         }
 
         h2 {
-            height: 1rem;
+            height: 100%;
             padding-left: .2rem;
             font-size: .8rem;
             color: black;
