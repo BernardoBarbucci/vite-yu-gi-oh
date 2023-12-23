@@ -8,9 +8,10 @@
         </a>
         <select id="filter-select" class="form-select" aria-label="Default select example">
           <option selected>Select an archetype</option>
-          <option value="1">One</option>
-          <option value="2">Two</option>
-          <option value="3">Three</option>
+          <!-- v-for che cerce nella lista in data -->
+          <option v-for="(archetype, index) in archetypesList" :key="index" value="archetype">
+            Archetype
+          </option>
         </select>
       </div>
     </nav>
@@ -25,10 +26,25 @@ export default {
 
   data() {
     return {
-      title: 'Yu-Gi-Oh API'
+      title: 'Yu-Gi-Oh API',
+      archetypesList: [],
+      apiUrl: 'https://db.ygoprodeck.com/api/v7/cardinfo.php?num=35&offset=0',
     }
-  }
-}
+  },
+  methods: {
+    // copiata chiamata axios da cardswrapper e adattata alla ricerca dell'archetipo all'interno di appheader
+    getArchetypes() {
+      axios.get(this.apiUrl)
+        .then((response) => {
+          this.archetypesList = response.data.data;
+        })
+        .catch(function (error) {
+          // handle error
+          console.log(error);
+        })
+    }
+  },
+};
 </script>
 
 <style lang="scss" scoped>
