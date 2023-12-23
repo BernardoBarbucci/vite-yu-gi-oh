@@ -44,6 +44,9 @@ export default {
           // handle error
           console.log(error);
         })
+    },
+    selectArchetype(archetype) {
+      this.store.archetypeFilter = archetype;
     }
   },
   // richiamo la seconda chiamata per completare il giro
