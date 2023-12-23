@@ -51,7 +51,7 @@ article {
             height: 2.5rem;
             font-size: .9rem;
             color: black;
-            border-bottom: 2px solid black;
+            border-bottom: 1px solid black;
         }
 
         h2 {
@@ -61,6 +61,11 @@ article {
             color: black;
         }
 
+        p {
+            font-size: .8rem;
+            padding-left: .2rem;
+            color: black;
+        }
 
         // p {
         //     opacity: 0;

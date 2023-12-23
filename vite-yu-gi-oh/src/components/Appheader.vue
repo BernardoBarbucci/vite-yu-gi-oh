@@ -6,16 +6,20 @@
           <img src="../components/img/Yugioh_anime_logo.webp" class="me-4" alt="Logo" width="120">
           {{ title }}
         </a>
-        <!-- <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form> -->
+        <select id="filter-select" class="form-select" aria-label="Default select example">
+          <option selected>Select an archetype</option>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+        </select>
       </div>
     </nav>
   </header>
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
   name: 'Appheader',
 
@@ -27,4 +31,8 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+#filter-select {
+  width: 20rem;
+}
+</style>
