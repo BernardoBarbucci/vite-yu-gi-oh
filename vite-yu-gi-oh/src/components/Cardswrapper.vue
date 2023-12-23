@@ -2,11 +2,11 @@
     <section id="custom_wrapper" class="container">
         <div>
             <h1>
-                Found {{ cardsList.length }} cards
+                Found {{ store.cardsList.length }} cards
             </h1>
         </div>
         <div class="row">
-            <Singlecard v-for="card in cardsList" :key="card.id" :card="card" />
+            <Singlecard v-for="card in store.cardsList" :key="card.id" :card="card" />
         </div>
     </section>
 </template>
@@ -14,7 +14,7 @@
 <script>
 import Singlecard from './Singlecard.vue';
 import axios from 'axios';
-import store from '../store';
+import { store } from '../store';
 
 export default {
     name: 'Cardswrapper',
