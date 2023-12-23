@@ -36,7 +36,7 @@ export default {
     getArchetypes() {
       axios.get(this.apiUrl)
         .then((response) => {
-          this.archetypesList = response.data.data;
+          this.archetypesList = response.data;
         })
         .catch(function (error) {
           // handle error
@@ -44,6 +44,10 @@ export default {
         })
     }
   },
+  // richiamo la seconda chiamata per completare il giro
+  created() {
+    this.getArchetypes();
+  }
 };
 </script>
 
