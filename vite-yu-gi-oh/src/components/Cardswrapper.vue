@@ -24,6 +24,15 @@ export default {
             store,
         };
     },
+    computed: {
+        filteredCards() {
+            // filtra le cards in base a this.
+            if (store.archetypeFilter) {
+                return store.cardsList.filter(card => card.archetype === store.archetypeFilter);
+            }
+            return store.cardsList;
+        },
+    },
     methods: {
         getCards() {
             store.getCards()

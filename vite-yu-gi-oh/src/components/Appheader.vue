@@ -10,7 +10,7 @@
           aria-label="Default select example">
           <option selected>Select an archetype</option>
           <!-- v-for che cerce nella lista in data -->
-          <option v-for="(archetype, index) in archetypesList" :key="index" :value="archetype.archetype_name">
+          <option v-for="(archetype, index) in archetypesList" :key="index">
             {{ archetype.archetype_name }}
           </option>
         </select>
@@ -32,7 +32,7 @@ export default {
       archetypesList: [],
       apiUrl: 'https://db.ygoprodeck.com/api/v7/archetypes.php',
       store,
-      selectedArchetype: '',
+      selectedArchetype: null,
     }
   },
   methods: {
