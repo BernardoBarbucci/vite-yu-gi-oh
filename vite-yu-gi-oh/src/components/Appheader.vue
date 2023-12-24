@@ -47,9 +47,9 @@ export default {
           console.log(error);
         })
     },
-    selectArchetype(archetype) {
-      console.log(archetype);
-      this.store.archetypeFilter = ;
+    selectArchetype() {
+      console.log(this.selectedArchetype);
+      this.store.archetypeFilter = this.selectedArchetype;
     }
   },
   // richiamo la seconda chiamata per completare il giro
