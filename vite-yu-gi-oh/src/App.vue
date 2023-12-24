@@ -8,7 +8,7 @@
 <script>
 import Appheader from './components/Appheader.vue';
 import Appmain from './components/Appmain.vue';
-import Cardswrapper from './components/Cardswrapper.vue'
+import Cardswrapper from './components/Cardswrapper.vue';
 
 export default {
   name: 'App',
@@ -23,3 +23,7 @@ export default {
 <style lang="scss">
 @use './components/style/general.scss' as *;
 </style>
+
+
+<!-- TYPE : 
+cd /Users/Berna/Desktop/vite-yu-gi-oh/vite-yu-gi-oh -->

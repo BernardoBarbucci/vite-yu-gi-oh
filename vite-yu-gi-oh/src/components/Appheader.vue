@@ -6,7 +6,8 @@
           <img src="../components/img/Yugioh_anime_logo.webp" class="me-4" alt="Logo" width="120">
           {{ title }}
         </a>
-        <select id="filter-select" class="form-select" aria-label="Default select example">
+        <select id="filter-select" class="form-select" @change="selectArchetype()" v-model="selectedArchetype"
+          aria-label="Default select example">
           <option selected>Select an archetype</option>
           <!-- v-for che cerce nella lista in data -->
           <option v-for="(archetype, index) in archetypesList" :key="index" :value="archetype.archetype_name">
@@ -30,7 +31,8 @@ export default {
       title: 'Yu-Gi-Oh API',
       archetypesList: [],
       apiUrl: 'https://db.ygoprodeck.com/api/v7/archetypes.php',
-      store
+      store,
+      selectedArchetype: '',
     }
   },
   methods: {
@@ -46,7 +48,8 @@ export default {
         })
     },
     selectArchetype(archetype) {
-      this.store.archetypeFilter = archetype;
+      console.log(archetype);
+      this.store.archetypeFilter = ;
     }
   },
   // richiamo la seconda chiamata per completare il giro
