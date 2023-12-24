@@ -47,6 +47,10 @@ export default {
     mounted() {
         this.getCards();
     },
+    watch: {
+        // Controlla il change in archetypeFilter e recupera le carte di conseguenza
+        'store.archetypeFilter': 'getCards',
+    },
 };
 </script>
   
