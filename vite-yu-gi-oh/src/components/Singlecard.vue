@@ -35,7 +35,7 @@ export default {
 article {
     width: calc(100% / 5 - 1rem);
     margin: .5rem;
-    border: 2px solid white;
+    // border: 2px solid white;
     background-color: rgb(203 145 73);
 
     img {

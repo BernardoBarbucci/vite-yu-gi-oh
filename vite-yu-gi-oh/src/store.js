@@ -3,7 +3,7 @@ import axios from 'axios';
 
 export const store = reactive({
 
-    apiUrl: 'https://db.ygoprodeck.com/api/v7/cardinfo.php?num=60&offset=0',
+    apiUrl: 'https://db.ygoprodeck.com/api/v7/cardinfo.php?num=250&offset=0',
     cardsList: [],
     // arrow function + api call presa da cardswrapper
     getCards: function (archetypeFilter = null) {

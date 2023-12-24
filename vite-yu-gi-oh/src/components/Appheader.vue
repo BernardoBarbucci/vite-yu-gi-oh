@@ -8,9 +8,8 @@
         </a>
         <select id="filter-select" class="form-select" @change="selectArchetype()" v-model="selectedArchetype"
           aria-label="Default select example">
-          <option selected>Select an archetype</option>
-          <!-- v-for che cerce nella lista in data -->
-          <option v-for="(archetype, index) in archetypesList" :key="index">
+          <option value="" selected>Select an archetype</option>
+          <option v-for=" (archetype, index) in archetypesList" :key="index">
             {{ archetype.archetype_name }}
           </option>
         </select>
