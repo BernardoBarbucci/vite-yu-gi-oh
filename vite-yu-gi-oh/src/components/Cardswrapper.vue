@@ -1,10 +1,10 @@
 <template>
     <section id="custom_wrapper" class="container">
         <div>
-            <h1>Found {{ store.cardsList.length }} cards</h1>
+            <h1>Found {{ filteredCards.length }} cards</h1>
         </div>
         <div class="row">
-            <Singlecard v-for="card in store.cardsList" :key="card.id" :card="card" />
+            <Singlecard v-for="card in filteredCards" :key="card.id" :card="card" />
         </div>
     </section>
 </template>
