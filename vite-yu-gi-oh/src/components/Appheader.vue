@@ -6,12 +6,9 @@
           <img src="../components/img/Yugioh_anime_logo.webp" class="me-4" alt="Logo" width="120">
           {{ title }}
         </a>
-        <select id="filter-select" class="form-select" @change="selectArchetype()" v-model="selectedArchetype"
-          aria-label="Default select example">
-          <option value="" selected>Select an archetype</option>
-          <option v-for=" (archetype, index) in archetypesList" :key="index">
-            {{ archetype.archetype_name }}
-          </option>
+        <select id="filter-select" class="form-select" @change="selectArchetype()" v-model="selectedArchetype" aria-label="Default select example">
+          <option :value="null" disabled selected>Select an archetype</option>
+          <option v-for="(archetype, index) in archetypesList" :key="index">{{ archetype.archetype_name }}</option>
         </select>
       </div>
     </nav>
