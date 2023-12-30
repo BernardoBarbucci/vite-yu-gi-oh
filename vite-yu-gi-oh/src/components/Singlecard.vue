@@ -1,34 +1,38 @@
 <template>
-    <article>
-        <div class="image">
-            <img :src="card.card_images[0].image_url" alt="image">
-        </div>
-        <div class="card-info">
-            <h1>
-            {{ card.name }}
-        </h1>
-        <h2>
-            Type: {{ card.type }}
-        </h2>
-        <h3 v-if="card.type.toLowerCase().includes('monster')">
-            Level: {{ card.level }}
-        </h3>
-        <p>
-            {{ card.desc }}
-        </p>
-        </div>
-    </article>
+  <article @click="toggleContent">
+    <div class="image" :style="{ display: showImage ? 'block' : 'none' }">
+      <img :src="card.card_images[0].image_url" alt="image">
+    </div>
+    <div class="card-info">
+      <h1>{{ card.name }}</h1>
+      <h2>Type: {{ card.type }}</h2>
+      <h3 v-if="card.type.toLowerCase().includes('monster')">Level: {{ card.level }}</h3>
+      <p v-show="showText">{{ card.desc }}</p>
+    </div>
+  </article>
 </template>
 
 <script>
 export default {
     props: {
-        card: {
-            type: Object,
-            required: true,
-        },
+      card: {
+        type: Object,
+        required: true,
+      },
     },
-};
+    data() {
+      return {
+        showImage: true,
+        showText: false,
+      };
+    },
+    methods: {
+      toggleContent() {
+        this.showImage = !this.showImage;
+        this.showText = !this.showText;
+      },
+    },
+  };
 </script>
 
 <style lang="scss" scoped>
@@ -42,9 +46,6 @@ article {
         width: 100%;
         margin-bottom: .3rem;
         transition: display 0.3s ease;
-    }
-    img:hover{
-        display: none;
     }
 
     .card-info {
@@ -78,19 +79,8 @@ article {
             font-size: .8rem;
             padding-left: .2rem;
             color: black;
-            display: none;
+            overflow-y: auto;
         }
     }
-
-    &:hover {
-
-        .card-info {
-            p {
-                display: inline;
-                overflow-y: auto;
-            }
-        }
-    }
-}
-
+};
 </style>
